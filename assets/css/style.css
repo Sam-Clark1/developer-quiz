@@ -1,0 +1,75 @@
+:root {
+    --first-color: rgb(165, 164, 164);
+    --second-color: rgb(230, 211, 211);
+    --third-color: blue;
+    --fourth-color: white;
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    padding: 10%;
+    background-color: var(--second-color);
+}
+ 
+#main-page {
+    background-color: var(--first-color);
+    padding: 3%;
+    height: 80%;
+ 
+}
+ 
+h1 {
+    text-align: center;
+    color: var(--third-color);
+}
+ 
+p {
+    margin: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--fourth-color);
+}
+ 
+#begin-btn-box {
+    text-align: center;
+    padding: auto;
+    margin: 3em 0 3em 0;
+}
+ 
+.begin-btn {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0.25em 0.75em;
+    cursor: pointer;
+    background-color: var(--third-color);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    min-width: 10ch;
+    min-height: 44px;
+    text-align: center;
+    line-height: 1.1;
+}
+ 
+button.begin-btn:hover {
+    background-color: rgb(69, 69, 245);
+    transition: 150ms ease-in-out;
+}
+ 
+button.begin-btn:focus {
+    translate: 10px;
+}
+ 
+.code-block {
+    background-color: var(--fourth-color);
+    width: 100%;
+    padding: 10px;
+}
