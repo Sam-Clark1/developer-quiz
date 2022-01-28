@@ -4,23 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div id="main-page">
-    <header id="header">
-    <h1 class="h1">Developer Quiz</h1>
-    </header>
-    <p id="intro">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, libero perferendis ex quibusdam et iste repudiandae, aliquid sit vero voluptatum exercitationem repellat animi laborum quaerat rerum. Qui libero quisquam est? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aut dolor itaque asperiores doloribus provident aliquam nobis possimus quidem consequuntur aliquid, reprehenderit dolores odio vitae voluptatum, ullam quod dolore incidunt.
-    </p>
-    <div id="begin-btn-box">
-        <button type="button" class="begin-btn">
-            Begin Quiz
-        </button>
+        <header id="header">
+        <h1 class="h1">Developer Quiz</h1>
+        </header>
+        <div id="questions-options">
+            <p id="intro">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, libero perferendis ex quibusdam et iste repudiandae, aliquid sit vero voluptatum exercitationem repellat animi laborum quaerat rerum. Qui libero quisquam est? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aut dolor itaque asperiores doloribus provident aliquam nobis possimus quidem consequuntur aliquid, reprehenderit dolores odio vitae voluptatum, ullam quod dolore incidunt.
+            </p>
+
+            <ol id="list-box">
+                <li class="option-list-A">
+                    <button type="button" class="option-A"></button>
+                </li>
+                <li class="option-list-B">
+                    <button type="button" class="option-B"></button>
+                </li>
+                <li class="option-list-C">
+                    <button type="button" class="option-C"></button>
+                </li>
+                <li class="option-list-D">
+                <button type="button" class="option-D"></button>
+                </li>
+            </ol>
+        </div>
+
+        <div id="begin-btn-box">
+            <button type="button" class="begin-btn">
+                Begin Quiz
+            </button>
+        </div>
+
+        <div id="q-status-box">
+            <hr id="q-break">
+            <p id="q-status">
+                placeholder
+            </p>
+        </div>
     </div>
-</div>
+    
+    <div id="timer-box">
+        
+        <p id="timer">
+            
+        </p>
+    </div>
+
+    <div id="high-score-box">
+        <button type="button" id="high-score">View High Scores</button>
+    </div>
 <script src="./assets/js/script.js"></script>
 </body>
 </html>
