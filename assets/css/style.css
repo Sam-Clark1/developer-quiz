@@ -26,36 +26,36 @@ body {
 .h1 {
     text-align: center;
     color: var(--first-color);
-    margin-bottom: 75px;
+    margin-bottom: 40px;
+    font-size: 35px;
 }
-
+ 
 .question-asked {
     text-align: left;
     color: var(--first-color);
-    margin-bottom: 75px;
+    margin-bottom: 50px;
 }
-
+ 
 #intro {
-    display: none;
     margin: 20px;
     text-align: center;
     font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--fourth-color);
+    color: var(--third-color);
 }
  
 #begin-btn-box {
-    display: none;
     text-align: center;
     padding: auto;
     margin: 3em 0 3em 0;
 }
  
-.begin-btn {
+.begin-btn,
+#high-score {
     border: none;
     background-color: transparent;
-    font-family: inherit;
     font-size: 16px;
+    font-weight: bold;
     padding: 0.25em 0.75em;
     cursor: pointer;
     background-color: var(--third-color);
@@ -68,35 +68,38 @@ body {
     line-height: 1.1;
 }
  
-button.begin-btn:hover {
+.begin-btn:hover,
+#high-score:hover
+ {
     opacity: 0.75;
     transition: 150ms ease-in-out;
 }
-
+ 
 #list-box {
+    display: none;
     list-style: none;
     counter-reset: olCounter;
 }
-
-.option-list-A, 
-.option-list-B, 
-.option-list-C, 
+ 
+.option-list-A,
+.option-list-B,
+.option-list-C,
 .option-list-D {
     margin: 10px 0;
     counter-increment: olCounter;
 }
-
-.option-list-A, 
-.option-list-B, 
-.option-list-C, 
-.option-list-D, 
-.option-A::before, 
-.option-B::before, 
-.option-C::before, 
+ 
+.option-list-A,
+.option-list-B,
+.option-list-C,
+.option-list-D,
+.option-A::before,
+.option-B::before,
+.option-C::before,
 .option-D::before {
     content: counter(olCounter) ". ";
 }
-
+ 
 .option-A,
 .option-B,
 .option-C,
@@ -123,40 +126,70 @@ button.begin-btn:hover {
     opacity: 0.75;
     transition: 150ms ease-in-out;
 }
-
+ 
 #timer-box{
     position: absolute;
     top: 0;
     right: 0;
     margin: 30px;
 }
-
+ 
 #timer {
-    font-size: 20px;
+    font-size: 2.5em;
+    font-weight: bolder;
     color: var(--third-color);
 }
-
+ 
 #high-score-box {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     margin: 15px;
 }
-
+ 
 #q-status-box {
+    display: none;
     width: 100%;
     margin-top: 5em;
     text-align: left;
 }
-
+ 
 #q-break {
     color: var(--second-color);
     opacity: 0.75;
 }
-
+ 
 #q-status {
     color: var(--second-color);
     font-size: 2.5em;
     font-style: italic;
     opacity: 0.75;
+}
+ 
+@media screen and (max-width: 980px) {
+   
+body {
+    padding: 0;
+    margin: 0;
+}
+ 
+#intro{
+    font-size: 20px;
+}  
+ 
+.h1 {
+    margin: 10%;
+    font-size: 25px;
+}
+ 
+.option-list-A,
+.option-list-B,
+.option-list-C,
+.option-list-D {
+    text-align: center;
+}
+ 
+#timer {
+    font-size: 2em;
+}
 }

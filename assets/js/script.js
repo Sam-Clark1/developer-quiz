@@ -21,114 +21,115 @@ var timerBox = document.querySelector("#timer-box");
 var timer = document.querySelector("#timer");
 var highScoreBox = document.querySelector("#high-score-box");
 var highScore = document.querySelector("#high-score");
-
-var index = -1;
-
+ 
+var index = 0;
+var timeLeft = 75;
+ 
 var questions = [    
 {
     question: "HTML stands for -",
-    optionA: "HighText Machine Language",
-    optionB: "HyperText and links Markup Language",
-    optionC: "HyperText Markup Language",
-    optionD: "None of these",
-    
+    options: {
+    A: "HighText Machine Language",
+    B: "HyperText and links Markup Language",
+    C: "HyperText Markup Language",
+    D: "None of these",
+    },
+    correct: "A"
 },
 {
     question: "The correct sequence of HTML tags for starting a webpage is - ",
-    optionA: "Head, Title, HTML, body",
-    optionB: "HTML, Body, Title, Head",
-    optionC: "HTML, Head, Title, Body",
-    optionD: "HTML, Head, Title, Body",
+    A: "Head, Title, HTML, body",
+    B: "HTML, Body, Title, Head",
+    C: "HTML, Head, Title, Body",
+    D: "HTML, Head, Title, Body",
     correct: "D"
 },
 {
     question: "The property in CSS used to change the background color of an element is -",
-    optionA: "bgcolor",
-    optionB: "color",
-    optionC: "background-color",
-    optionD: "All of the above",
+    A: "bgcolor",
+    B: "color",
+    C: "background-color",
+    D: "All of the above",
     correct: "B"
 },
 {
     question: "Which built-in method returns the character at the specified index?",
-    optionA: "characterAt()",
-    optionB: "getCharAt()",
-    optionC: "charAt()",
-    optionD: "None of the above.",
+    A: "characterAt()",
+    B: "getCharAt()",
+    C: "charAt()",
+    D: "None of the above.",
     correct: "C"
 },
 {
     question: "Which built-in method returns the calling string value converted to lower case?",
-    optionA: "toLowerCase()",
-    optionB: "toLower()",
-    optionC: "changeCase(case)",
-    optionD: "None of the above.",
+    A: "toLowerCase()",
+    B: "toLower()",
+    C: "changeCase(case)",
+    D: "None of the above.",
     correct: "A"
 },
 ]
-
-var test1 = function() {
+ 
+var begin = function() {
+    intro.style.display = "none";
+    beginBtnBox.style.display = "none";
+    listBox.style.display = "block";
     countdown();
-    test()
+    nextQuestion();
+   
 }
-
-var test = function() {
-    index++
-    h1.textContent = questions[index].question;
-    h1.className = "question-asked"
-    optionA.textContent = questions[index].optionA;
-    optionB.textContent = questions[index].optionB;
-    optionC.textContent = questions[index].optionC;
-    optionD.textContent = questions[index].optionD;
-    header.appendChild(h1);
-    optionListA.appendChild(optionA);
-    optionListB.appendChild(optionB);
-    optionListC.appendChild(optionC);
-    optionListD.appendChild(optionD);
-    
-}
-
+ 
 var countdown = function () {
-    var timeLeft = 75;
-  
-    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
-      // As long as the `timeLeft` is greater than 1
       if (timeLeft > 1) {
-        // Set the `textContent` of `timerEl` to show the remaining seconds
         timer.textContent = timeLeft;
-        // Decrement `timeLeft` by 1
         timeLeft--;
       } else if (timeLeft === 1) {
-        // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
         timer.textContent = timeLeft;
         timeLeft--;
       } else {
-        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
         timer.textContent = '';
-        // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
       }
     }, 1000);
   }
-
-// beginBtn.addEventListener("click", )
-optionA.addEventListener("click", test)
-highScore.addEventListener("click", test1)
  
-
+var nextQuestion = function() {
+    // index++
+    // h1.textContent = questions[index].question;
+    // h1.className = "question-asked"
+    // optionA.textContent = questions[index].optionA;
+    // optionB.textContent = questions[index].optionB;
+    // optionC.textContent = questions[index].optionC;
+    // optionD.textContent = questions[index].optionD;
+    // header.appendChild(h1);
+    // optionListA.appendChild(optionA);
+    // optionListB.appendChild(optionB);
+    // optionListC.appendChild(optionC);
+    // optionListD.appendChild(optionD);
+   
+}
+ 
+beginBtn.addEventListener("click", begin)
+// optionA.addEventListener("click", nextQuestion)
+// highScore.addEventListener("click", begin)
+ 
+ 
+ 
+ 
+ 
 // Data Attributes
 // var container = document.querySelector(".container");
-
+ 
 // container.addEventListener("click", function(event) {
 //   var element = event.target;
-
+ 
 //   if (element.matches(".box")) {
 //     var state = element.getAttribute("data-state");
-
+ 
 //     // Use an if statement to conditionally render the number on the card
 //     if (state === "hidden") {
-//       // If the card is clicked while the state is "hidden", we set .textContent to the number 
+//       // If the card is clicked while the state is "hidden", we set .textContent to the number
 //       element.textContent = element.dataset.number;
 //       // Using the dataset property, we change the state to visible because the user can now see the number
 //       element.dataset.state = "visible";
@@ -138,21 +139,20 @@ highScore.addEventListener("click", test1)
 //       element.textContent= "";
 //       // Use .setAttribute() method
 //       element.setAttribute("data-state", "hidden")
-     
 //     }  
 //   }
 // });
-
+ 
 // Local Storage
 // var firstNameInput = document.querySelector("#first-name");
 // var lastNameInput = document.querySelector("#last-name");
 // var emailInput = document.querySelector("#email");
 // var passwordInput = document.querySelector("#password");
 // var signUpButton = document.querySelector("#sign-up");
-
+ 
 // signUpButton.addEventListener("click", function(event) {
 //   event.preventDefault();
-  
+ 
 //   // create user object from submission
 //   var user = {
 //     firstName: firstNameInput.value.trim(),
@@ -160,7 +160,6 @@ highScore.addEventListener("click", test1)
 //     email: emailInput.value.trim(),
 //     password: passwordInput.value.trim()
 //   };
-
-//   // set new submission to local storage 
+//   // set new submission to local storage
 //   localStorage.setItem("user", JSON.stringify(user));
-  
+ 
