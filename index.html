@@ -10,7 +10,7 @@
 <body>
     <div id="main-page">
         <header id="header">
-        <h1 class="h1">Developer Quiz</h1>
+        <h1 class="h1">Web Developer Quiz</h1>
         </header>
         <div id="questions-options">
             <p id="intro">
@@ -19,30 +19,48 @@
  
             <ol id="list-box">
                 <li class="option-list-A">
-                    <button type="button" class="option-A" onclick=""></button>
+                    <button type="button" class="option-A" onclick="checkAnswer('A')"></button>
                 </li>
                 <li class="option-list-B">
-                    <button type="button" class="option-B" onclick=""></button>
+                    <button type="button" class="option-B" onclick="checkAnswer('B')"></button>
                 </li>
                 <li class="option-list-C">
-                    <button type="button" class="option-C" onclick=""></button>
+                    <button type="button" class="option-C" onclick="checkAnswer('C')"></button>
                 </li>
                 <li class="option-list-D">
-                <button type="button" class="option-D" onclick=""></button>
+                    <button type="button" class="option-D" onclick="checkAnswer('D')"></button>
                 </li>
             </ol>
+
+            <ul id="highScoreDisplay">
+
+            </ul>
+
+            <form id="initials-form">
+                <div id="initials-input-box">
+                    <input type="text" name="initials" id="initials" placeholder="Input your Initials">
+                </div>
+                <div id="initials-submit-box">
+                    <button type="submit" id="initials-submit" >Submit</button>
+                </div>
+            </form>
+
         </div>
  
         <div id="begin-btn-box">
-            <button type="button" class="begin-btn">
+            <button type="button" id="begin-btn">
                 Begin Quiz
             </button>
         </div>
- 
+        
+        <div id="restart-btn-box">
+            <button type="button" id="restart-btn">Main Menu</button>
+        </div>
+
         <div id="q-status-box">
             <hr id="q-break">
             <p id="q-status">
-                placeholder
+                
             </p>
         </div>
     </div>
